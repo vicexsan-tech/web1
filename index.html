@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Distribución de árboles en la zona del crimen</title>
+
+  <!-- OpenLayers -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <header class="app-header">
+    <div class="app-title">Distribución de árboles en la zona del crimen</div>
+    <div class="toolbar">
+        <button id="btn-refresh" type="button">Actualizar</button>
+      </div>
+  </header>
+
+  <main class="app-main">
+    <!-- MAPA -->
+    <section id="map" class="map"></section>
+    <!-- Controles  -->
+    <aside class="panel">
+      <h3>Información</h3>
+      <div id="info" class="info">
+        Haz click en el mapa para obtener coordenadas.
+      </div>
+      <hr>
+<strong>Capas</strong>
+<br>
+
+<!-- arboles_interseccion -->
+<div class="layer-control">
+  <label>
+    <input type="checkbox" id="toggle-arboles-interseccion">
+    Árboles Intersección
+  </label>
+</div>
+
+<!-- ÚNICA CHECKBOX DE ÁRBOLES -->
+<div class="layer-control">
+  <label>
+    <input type="checkbox" id="toggle-arboles">
+    Árboles
+  </label>
+</div>
+
+<!-- SELECTOR DE ESPECIES -->
+<div class="road-control">
+  <label for="arboles-select">Especie</label>
+  <select id="arboles-select">
+    <option value="null" selected>Todas</option>
+    <option value="Pinus nigra">Pinus nigra</option>
+    <option value="Quercus ilex">Quercus ilex</option>
+    <option value="Juniperus thurifera">Juniperus thurifera</option>
+  </select>
+</div>
+
+<!-- Comarca -->
+<div class="layer-control">
+  <label>
+    <input type="checkbox" id="toggle-comarca">
+    Comarca
+  </label>
+</div>
+
+      <hr>
+      <div class="basemap-control">
+        <label for="basemap-select">Basemap</label>
+        <select id="basemap-select">
+          <option value="osm" selected>OpenStreetMap</option>
+          <option value="light">Light Gray</option>
+          <option value="dark">Dark Gray</option>
+        </select>
+      </div>
+    </aside>
+  </main>
+  <!-- JS libs -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+  <!-- App JS -->
+  <script src="./js/app.js"></script>
+</body>
+</html>
